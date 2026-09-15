@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOMBOLA NEWS - Real Congo News</title>
+<style>
+body{margin:0;font-family:Arial;background:#f5f5f5}
+.top{background:#000;color:#fff;padding:15px;text-align:center}
+.top h1{margin:0;color:#ffcc00;letter-spacing:2px}
+.ad{background:#ffcc00;padding:10px;text-align:center;font-weight:bold}
+.ad small{color:#000}
+.card{background:#fff;margin:10px;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px #0002}
+.card img{width:100%;height:180px;object-fit:cover}
+.body{padding:12px}
+.body h3{margin:0 0 6px}
+.body p{color:#444;font-size:14px;margin:0}
+.time{font-size:11px;color:#888;margin-top:6px}
+.nav{display:flex;gap:8px;padding:10px;overflow:auto;background:#222}
+.nav b{background:#ffcc00;color:#000;padding:6px 14px;border-radius:20px;font-size:13px}
+.money-btn{position:fixed;bottom:20px;right:20px;background:#000;color:#ffcc00;border:2px solid #ffcc00;width:60px;height:60px;border-radius:50%;font-size:28px}
+</style>
+</head><body>
+<div class="top"><h1>TOMBOLA NEWS</h1><div>Real News - Congo | Money App</div></div>
+<div class="ad">📢 ADVERTISE HERE - 20,000 FC/week<br><small>Contact: WhatsApp +243...</small></div>
+<div class="nav"><b>All</b><b>Congo</b><b>World</b><b>Cinema</b><b>Sport</b></div>
+<div id="news"></div>
+<button class="money-btn" onclick="addNews()">+</button>
+<script>
+let news=[
+{title:"Kinshasa: Price of Bread Drops - Real News",desc:"According to Actualite.cd today, bread price dropped 10% in central market. Source: Actualite.cd",img:"https://images.unsplash.com/photo-1504711434969-e33886168f5c",time:"Today 08:21"},
+{title:"TOMBOLA CINEMA PRO - New Movies This Week",desc:"Watch latest international movies only on TOMBOLA channel. Join now!",img:"https://images.unsplash.com/photo-1485846234645-a62644f84728",time:"Today"}
+];
+function show(){
+let h=""; news.forEach(n=>{
+h+=`<div class="card"><img src="${n.img}"><div class="body"><h3>${n.title}</h3><p>${n.desc}</p><div class="time">${n.time} | AD: $</div></div></div>`;
+}); document.getElementById("news").innerHTML=h;
+}
+function addNews(){
+let t=prompt("Title:"); let d=prompt("Real news + Source:"); 
+if(t&&d){news.unshift({title:t,desc:d,img:"https://images.unsplash.com/photo-1495020689067-958852a7765e",time:"Just now"}); show();}
+}
+show();
+</script>
+</body></html>
