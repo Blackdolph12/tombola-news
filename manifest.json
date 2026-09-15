@@ -1,0 +1,14 @@
+{
+  "name": "TOMBOLA NEWS by Disasi",
+  "short_name": "Tombola",
+  "description": "Congo | Durban | World News - By Disasi",
+  "start_url": "/tombola-news/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffcc00",
+  "icons": [{
+    "src": "https://cdn-icons-png.flaticon.com/512/21/21601.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
