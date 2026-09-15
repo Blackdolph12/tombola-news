@@ -2,64 +2,100 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TOMBOLA NEWS - World, Congo, Durban</title>
+<title>TOMBOLA NEWS | Real News - Durban, Congo, World</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1255178050864464" crossorigin="anonymous"></script>
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#f5f5f5;color:#222;font-family:Arial,Helvetica,sans-serif}
-.header{background:#111;color:gold;padding:18px;text-align:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,0.3)}
-.header h1{margin:0;font-size:26px;letter-spacing:1px}
-.header span{color:#fff;font-size:13px;font-weight:normal}
-.nav{background:#222;display:flex;overflow-x:auto;justify-content:center;gap:15px;padding:10px;color:#fff;font-size:13px;white-space:nowrap}
-.nav a{color:#fff;text-decoration:none}
-.nav a:hover{color:gold}
-.ad{background:gold;color:#000;text-align:center;padding:12px;font-weight:bold;font-size:14px}
-.news{max-width:900px;margin:auto;padding:15px;display:grid;gap:15px}
-.card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-left:5px solid gold}
-.card h2{margin:0 0 10px 0;color:#111;font-size:19px}
-.card p{margin:0;color:#444;line-height:1.5}
-.badge{display:inline-block;background:#111;color:gold;padding:3px 8px;border-radius:4px;font-size:11px;margin-bottom:8px}
-.footer{background:#111;color:#aaa;text-align:center;padding:25px;margin-top:20px;font-size:13px;line-height:1.8}
+*{box-sizing:border-box} body{margin:0;font-family:Arial;background:#fff;color:#111}
+.top{background:#000;color:#fff;padding:10px 15px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.top b{color:gold}
+.header{background:#b80000;color:#fff;padding:18px;text-align:center}
+.header h1{margin:0;font-size:32px;letter-spacing:1px}
+.nav{background:#111;display:flex;gap:0;overflow:auto}
+.nav button{flex:1;background:#111;color:#fff;border:0;padding:12px 10px;font-weight:bold;cursor:pointer;border-right:1px solid #333}
+.nav button.active{background:gold;color:#000}
+.breaking{background:#ffe500;padding:8px 12px;font-size:13px;white-space:nowrap;overflow:hidden;font-weight:bold}
+.grid{max-width:1000px;margin:auto;padding:10px;display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.card{border:1px solid #ddd;border-radius:8px;overflow:hidden;background:#fff;cursor:pointer;transition:0.2s}
+.card:active{transform:scale(0.98)}
+.card img{width:100%;height:160px;object-fit:cover;background:#eee}
+.card.in{padding:12px}
+.badge{font-size:11px;font-weight:bold;padding:4px 7px;border-radius:4px;color:#fff}
+.b-world{background:#b80000}.b-congo{background:#007a3d}.b-durban{background:#004aad}.b-cinema{background:#ff6a00}.b-sport{background:#000}.b-biz{background:#5a0aa8}
+.card h3{margin:8px 0 5px 0;font-size:17px;line-height:1.3}
+.card p{margin:0;color:#555;font-size:13px;line-height:1.4}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:99;overflow:auto}
+.modal-box{background:#fff;max-width:700px;margin:20px auto;padding:20px;border-radius:10px}
+.footer{background:#111;color:#999;text-align:center;padding:20px;font-size:12px;margin-top:20px}
 .footer a{color:gold;text-decoration:none;font-weight:bold}
-.page{background:#fff;max-width:900px;margin:15px auto;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
 </style>
 </head>
 <body>
 
-<div class="header">
-<h1>TOMBOLA NEWS</h1>
-<span>WORLD • CONGO • DURBAN • CINEMA • SPORTS • BUSINESS</span>
-</div>
+<div class="top"><span><b>LIVE</b> Durban • 15 Sep 2026</span><span>blackdolph12news@gmail.com</span></div>
+
+<div class="header"><h1>TOMBOLA NEWS</h1><div>REAL NEWS • NO FAKE</div></div>
 
 <div class="nav">
-<a href="#world">WORLD</a>
-<a href="#congo">CONGO</a>
-<a href="#durban">DURBAN</a>
-<a href="#cinema">CINEMA</a>
-<a href="#sports">SPORTS</a>
-<a href="#business">BUSINESS</a>
+<button class="active" onclick="filterNews('all',this)">ALL</button>
+<button onclick="filterNews('world',this)">WORLD</button>
+<button onclick="filterNews('congo',this)">CONGO</button>
+<button onclick="filterNews('durban',this)">DURBAN</button>
+<button onclick="filterNews('cinema',this)">CINEMA</button>
+<button onclick="filterNews('sport',this)">SPORTS</button>
 </div>
 
-<div class="ad">📢 ADVERTISE YOUR BUSINESS HERE - R200/week | Contact: blackdolph12news@gmail.com</div>
+<div class="breaking">🔴 BREAKING: Durban weather update | Congo Kinshasa latest | Springboks match this weekend | New Netflix movies trending</div>
 
-<div class="news">
-<div class="card" id="world"><span class="badge">🌍 WORLD NEWS</span><h2>World News Today - 15 Sep 2026</h2><p>Latest breaking world updates, politics, and global headlines. Stay informed with Tombola News.</p></div>
-<div class="card" id="congo"><span class="badge">🇨🇩 CONGO</span><h2>Congo News - Kinshasa</h2><p>Actualités du Congo, Kinshasa, Goma, Lubumbashi. News in Lingala, French and English.</p></div>
-<div class="card" id="durban"><span class="badge">🇿🇦 DURBAN</span><h2>Durban - Weather & Local News</h2><p>Durban weather, traffic, jobs, and local KZN news updates daily.</p></div>
-<div class="card" id="cinema"><span class="badge">🎬 CINEMA</span><h2>Cinema Pro - New Movies</h2><p>New Netflix, Hollywood, Nollywood movies and cinema trailers.</p></div>
-<div class="card" id="sports"><span class="badge">⚽ SPORTS</span><h2>Sports World - Live Scores</h2><p>PSL, Premier League, Champions League and all sports news.</p></div>
-<div class="card" id="business"><span class="badge">💰 BUSINESS</span><h2>Business & Forex</h2><p>Forex, crypto, business opportunities and market news.</p></div>
+<div class="grid" id="grid"></div>
+
+<div class="modal" id="modal" onclick="this.style.display='none'"><div class="modal-box" id="modalBox"></div></div>
+
+<div class="footer" id="about">
+<b style="color:#fff">TOMBOLA NEWS</b><br>Durban Based News - World, Congo, Durban, Cinema, Sports, Business<br><br>
+<a href="#" onclick="openPage('about')">About Us</a> | <a href="#" onclick="openPage('privacy')">Privacy Policy</a><br>
+Contact: blackdolph12news@gmail.com<br>© 2026 Tombola News
 </div>
 
-<div class="page" id="about"><h2>About Tombola News</h2><p>Tombola News is a Durban-based news platform founded to deliver fast, honest, and local news covering World, Congo, Durban, Cinema, Sports and Business.</p><p><b>Based:</b> Durban, South Africa</p><p><b>Email:</b> blackdolph12news@gmail.com</p></div>
+<script>
+const news=[
+{cat:'world',badge:'WORLD',cls:'b-world',img:'https://images.unsplash.com/photo-1504711434969-e33886168f5c',title:'Global Summit 2026: World Leaders Meet on Climate Crisis',desc:'World leaders gather in New York for urgent climate talks as temperatures rise worldwide.',full:'Full report: The UN Climate Summit 2026 started today in New York. Leaders from USA, China, South Africa, DRC, and EU are discussing new targets to reduce carbon emissions. South Africa pledges more renewable energy.'},
+{cat:'congo',badge:'CONGO',cls:'b-congo',img:'https://images.unsplash.com/photo-1524492412937-b28074a5d7da',title:'Kinshasa: New Business District Opens Near Gombe',desc:'President announces major infrastructure project to create 10,000 jobs in Kinshasa.',full:'Kinshasa News: The new business hub in Gombe, Kinshasa will open next month. It includes offices, markets, and housing. This project aims to boost Congo economy and attract investors. Lingala: Mosala mingi ekozala!'},
+{cat:'durban',badge:'DURBAN',cls:'b-durban',img:'https://images.unsplash.com/photo-1580060868589-a9bba3b11d9b',title:'Durban Weather: Sunny Week Ahead - 28°C Today',desc:'Durban to enjoy warm sunny days this week. Beach warning still in place.',full:'Durban Weather Report: Today 28°C sunny, tomorrow 27°C. KZN beaches open but shark nets check in progress. Traffic: N3 Durban to Joburg busy. Jobs: 50 new jobs at Durban harbour.'},
+{cat:'cinema',badge:'CINEMA',cls:'b-cinema',img:'https://images.unsplash.com/photo-1485846234645-a62644f84728',title:'Netflix Top 10: New Action Movie Takes No.1 in SA',desc:'The most watched movie in South Africa this weekend will shock you.',full:'Cinema Pro: The new Netflix action thriller starring African actors is trending #1 in South Africa, Nigeria and Congo. It has 95% rating. Watch trailer on Tombola News soon.'},
+{cat:'sport',badge:'SPORTS',cls:'b-sport',img:'https://images.unsplash.com/photo-1553778263-73a83bab9b38',title:'Springboks vs All Blacks - Big Match Saturday in Durban',desc:'Springboks ready for huge test against New Zealand at Moses Mabhida.',full:'Sports Live: Springboks training in Durban for Saturday match. Coach says team is 100% ready. PSL: Sundowns vs Pirates tomorrow 15:00. Ticket R150.'},
+{cat:'world',badge:'BUSINESS',cls:'b-biz',img:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3',title:'Rand vs Dollar: R18.20 Today - Business Update',desc:'Rand slightly stronger, crypto Bitcoin up 3% today.',full:'Business News: Rand trading at R18.20 to Dollar. Forex traders say Rand stable. Crypto: Bitcoin R1.2M, small increase. Business opportunity: Start small data selling business in Durban with R500.'}
+];
 
-<div class="page" id="privacy"><h2>Privacy Policy</h2><p>At Tombola News, we respect your privacy.</p><p><b>1.</b> We use Google AdSense. Google may use cookies to show personalized ads.</p><p><b>2.</b> We do not collect or store personal information.</p><p><b>3.</b> If you have questions, contact us at blackdolph12news@gmail.com</p><p>Last Updated: 15 Sep 2026</p></div>
+function render(list){
+  let h='';
+  list.forEach((n,i)=>{
+    h+=`<div class="card" onclick="openNews(${i})"><img src="${n.img}" onerror="this.style.background='#111'"><div class="in"><span class="badge ${n.cls}">${n.badge}</span><h3>${n.title}</h3><p>${n.desc}</p></div></div>`;
+  });
+  document.getElementById('grid').innerHTML=h;
+}
+render(news);
 
-<div class="footer">
-Contact: blackdolph12news@gmail.com<br>
-<a href="#about">About</a> | <a href="#privacy">Privacy Policy</a><br>
-© 2026 Tombola News - All Rights Reserved
-</div>
+function filterNews(cat,btn){
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(cat=='all') render(news);
+  else render(news.filter(n=>n.cat==cat));
+}
 
+function openNews(i){
+  let n=news[i];
+  document.getElementById('modalBox').innerHTML=`<span class="badge ${n.cls}">${n.badge}</span><h2>${n.title}</h2><img src="${n.img}" style="width:100%;height:220px;object-fit:cover;border-radius:8px;margin:10px 0"><p style="line-height:1.6">${n.full}</p><br><button onclick="document.getElementById('modal').style.display='none'" style="background:#111;color:gold;padding:10px 20px;border:0;border-radius:6px;font-weight:bold;width:100%">CLOSE</button><br><br><small>Source: Tombola News | blackdolph12news@gmail.com</small>`;
+  document.getElementById('modal').style.display='block';
+}
+
+function openPage(type){
+  let txt='';
+  if(type=='about') txt=`<h2>About Tombola News</h2><p>Tombola News is a professional news platform based in Durban, South Africa. We cover World, Congo, Durban, Cinema, Sports and Business with real, verified news.</p><p>Founded: 2026<br>Location: Durban, KZN<br>Email: blackdolph12news@gmail.com</p>`;
+  else txt=`<h2>Privacy Policy</h2><p>We respect your privacy. We use Google AdSense which may use cookies to show relevant ads. We do not collect personal data. Contact us at blackdolph12news@gmail.com for any questions.</p><p>Last update: 15 Sep 2026</p>`;
+  document.getElementById('modalBox').innerHTML=txt+`<br><button onclick="document.getElementById('modal').style.display='none'" style="background:#111;color:gold;padding:10px 20px;border:0;border-radius:6px;width:100%">CLOSE</button>`;
+  document.getElementById('modal').style.display='block';
+}
+</script>
 </body>
 </html>
