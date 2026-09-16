@@ -5,37 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TOMBOLA NEWS - REAL NEWS NO FAKE</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#000}
-.top{background:#b80000;color:#fff;padding:8px 12px;display:flex;justify-content:space-between;font-size:14px;font-weight:bold}
-.header{background:#000;color:#fff;padding:14px;text-align:center}
-.header h1{margin:0;color:#ffcc00;font-size:22px}
-.header div{font-size:12px;margin-top:4px}
-.nav{display:flex;gap:6px;overflow:auto;padding:8px;background:#111}
-.nav button{background:#222;color:#fff;border:1px solid #444;padding:6px 14px;border-radius:20px;cursor:pointer}
-.nav button.active{background:#ffcc00;color:#000;font-weight:bold}
-.breaking{background:gold;color:#000;padding:8px 12px;font-weight:bold;white-space:nowrap;overflow:hidden;border-bottom:2px solid #000}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
-.card{border:1px solid #ddd;border-radius:8px;overflow:hidden;background:#fff}
-.card img{width:100%;height:120px;object-fit:cover}
-.card .in{padding:8px}
-.badge{padding:3px 7px;font-size:11px;font-weight:bold;color:#fff;border-radius:3px;display:inline-block}
-.b-world{background:#d00}
-.b-durban{background:#b80000}
+body{margin:0;font-family:Arial,sans-serif;background:#eee;color:#000}
+.top{background:#000;color:#fff;padding:8px 12px;display:flex;justify-content:space-between;font-size:13px}
+.header{background:#b80000;color:#fff;padding:14px;text-align:center}
+.header h1{margin:0;font-size:26px;letter-spacing:1px}
+.header p{margin:4px 0 0;font-size:14px}
+.nav{display:flex;overflow:auto;background:#111;gap:0}
+.nav button{background:#111;color:#fff;border:none;padding:12px 18px;font-weight:bold;white-space:nowrap;border-right:1px solid #222}
+.nav button.active{background:#ffcc00;color:#000}
+.breaking{background:#ffeb3b;color:#000;padding:10px 12px;font-weight:bold;white-space:nowrap;overflow:hidden;border-bottom:1px solid #000}
+.grid{padding:10px;display:flex;flex-direction:column;gap:12px}
+.card{background:#fff;border-radius:6px;overflow:hidden;border:1px solid #ccc}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card .in{padding:10px}
+.badge{padding:4px 8px;font-size:11px;font-weight:bold;color:#fff;border-radius:3px;display:inline-block}
+.b-world{background:#c00}
 .b-congo{background:#0a7a0a}
-.b-cinema{background:#6a0dad}
-.b-sport{background:#004aad}
-.card h3{font-size:13px;margin:6px 0;line-height:1.2}
-.card p{font-size:11px;color:#444;margin:0}
-.footer{text-align:center;padding:15px;font-size:12px;background:#111;color:#fff;margin-top:10px}
-.footer a{color:#ffcc00;text-decoration:none}
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:none;z-index:999;padding:20px;box-sizing:border-box;overflow:auto}
+.b-durban{background:#b80000}
+.card h3{font-size:16px;margin:8px 0 4px;line-height:1.2}
+.card p{font-size:13px;color:#333;margin:0}
 </style>
 </head>
 <body>
-<div class="top"><span><b>LIVE</b> Durban • 16 Sep 2026 08:50</span><span>TOMBOLA</span></div>
+<div class="top"><span><b style="color:gold">LIVE</b> Durban • 16 Sep 2026 09:00</span><span>blackdolph12news@gmail.com</span></div>
 <div class="header">
 <h1>TOMBOLA NEWS</h1>
-<div>REAL NEWS NO FAKE | REFRESH YOUR MIND MY FRIEND | FOOT & BOXING NEWS</div>
+<p>REAL NEWS • NO FAKE</p>
 </div>
 <div class="nav">
 <button class="active" onclick="filterNews('all',this)">ALL</button>
@@ -45,32 +40,24 @@ body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#000}
 <button onclick="filterNews('cinema',this)">CINEMA</button>
 <button onclick="filterNews('sport',this)">SPORT</button>
 </div>
-<div class="breaking">🔴 BREAKING 16 SEP: AI giants create standards body TODAY | Saudi oil pipeline hit $120 | DRC-Rwanda Geneva talks start TODAY | ANC IEC decision TODAY</div>
+<div class="breaking">🔴 BREAKING 16 SEP: AI giants create standards body TODAY | Saudi oil $120 | DRC-Rwanda Geneva talks TODAY | ANC IEC decision TODAY</div>
 <div class="grid" id="grid"></div>
-<div class="modal" id="modal" onclick="if(event.target==this)this.style.display='none'"></div>
-<div class="footer">
-<b style="color:#ffcc00">TOMBOLA NEWS</b><br>Durban • World • Congo • Cinema • Sport<br>
-<a href="#" onclick="openPage('about');return false;">Privacy Policy | About</a><br>
-Contact: blackdolph12news@gmail.com<br>© 2026 Tombola News - By Moise Disasi
-</div>
+
 <script>
 let news=[
-{cat:'world',badge:'WORLD TODAY',cls:'b-world',img:'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600',title:'BREAKING TODAY: OpenAI, Google, Anthropic Create AI Standards Body',desc:'Sept 16: World biggest AI companies to form self-regulatory body like FINRA to test powerful AI before release. Demis Hassabis proposal.'},
-{cat:'world',badge:'WORLD TODAY',cls:'b-world',img:'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600',title:'Saudi Cancels Oil Cargoes After Pipeline Hit - Oil $120 Today',desc:'Sept 16: Saudi cut shipments to Europe after drone attacks blamed on Iraqi militia hit East-West pipeline. Red Sea port Yanbu suspended. Poland seeks alternatives.'},
-{cat:'world',badge:'WORLD TODAY',cls:'b-world',img:'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=600',title:'Geneva TODAY: DRC-Rwanda Peace Talks Start Sept 16-17',desc:'TODAY in Geneva: Joint Security Mechanism on Washington Accords. US, Qatar, AU mediators. Fighting continues in eastern DRC, FDLR and Rwanda forces on table.'},
-{cat:'durban',badge:'DURBAN TODAY',cls:'b-durban',img:'https://images.unsplash.com/photo-1580060864503-33edc7ae7b36?w=600',title:'BREAKING: 282 Durban Refugees Move to Stella Park - 16 Sep',desc:'Home Affairs offered Lindela or reintegration. Group refuses, kids in Durban schools. Second wave threats by Sept 30. Tombola exclusive.'},
-{cat:'durban',badge:'SA TODAY',cls:'b-durban',img:'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600',title:'ANC vs IEC: Judgment TODAY 16 Sep',desc:'Electoral Court decides TODAY if ANC late candidate list will be accepted. Final lists announcement today.'},
-{cat:'world',badge:'WORLD',cls:'b-world',img:'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600',title:'Global News Archive',desc:'Previous world updates'},
-{cat:'congo',badge:'CONGO',cls:'b-congo',img:'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600',title:'Kinshasa: New Development Project',desc:'Congo development continues in capital.'},
-{cat:'durban',badge:'DURBAN',cls:'b-durban',img:'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600',title:'Durban Weather: 28°C Sunny Today',desc:'Perfect beach day in Durban, light winds.'},
-{cat:'cinema',badge:'CINEMA',cls:'b-cinema',img:'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600',title:'New Movies This Week',desc:'Top cinema releases this week.'},
-{cat:'sport',badge:'SPORT',cls:'b-sport',img:'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600',title:'Foot & Boxing News LIVE',desc:'Latest sports updates from Tombola.'}
+{cat:'world',badge:'WORLD TODAY',cls:'b-world',img:'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800',title:'BREAKING TODAY: OpenAI, Google, Anthropic Create AI Standards Body - 16 Sep',desc:'Sept 16: World biggest AI companies to form self-regulatory body to test powerful AI before release. Proposal by Google DeepMind.'},
+{cat:'world',badge:'WORLD TODAY',cls:'b-world',img:'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800',title:'Saudi Cancels Oil Cargoes After Pipeline Hit - Oil $120 Today',desc:'Sept 16: Saudi cut shipments to Europe after drone attacks hit East-West pipeline. Yanbu port suspended. Prices top $120.'},
+{cat:'world',badge:'WORLD TODAY',cls:'b-world',img:'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=800',title:'Geneva TODAY: DRC-Rwanda Talks Start Sept 16-17',desc:'TODAY in Geneva: Joint Security Mechanism on Washington Accords. US, Qatar, AU mediators present. Fighting in eastern DRC on agenda.'},
+{cat:'world',badge:'WORLD',cls:'b-world',img:'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=800',title:'Global Summit 2026: World Leaders Meet on Climate Crisis',desc:'World leaders gather in New York for urgent climate talks as temperatures rise worldwide.'},
+{cat:'congo',badge:'CONGO',cls:'b-congo',img:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800',title:'Kinshasa: New Business District Opens Near Gombe',desc:'President announces major infrastructure project to create jobs and modernize capital.'},
+{cat:'durban',badge:'DURBAN TODAY',cls:'b-durban',img:'https://images.unsplash.com/photo-1571212515416-fef01fc43637?w=800',title:'BREAKING: 282 Durban Refugees Move to Stella Park - 16 Sep',desc:'Home Affairs offered Lindela or reintegration. Group refuses, kids in Durban schools. Second wave threats by Sept 30.'},
+{cat:'durban',badge:'SA TODAY',cls:'b-durban',img:'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800',title:'ANC vs IEC: Judgment TODAY 16 Sep',desc:'Electoral Court decides TODAY if ANC late candidate list will be accepted. Final lists today.'}
 ];
 function showNews(list){
 let g=document.getElementById('grid');
 g.innerHTML='';
 list.forEach(n=>{
-g.innerHTML+=`<div class="card" onclick="openModal('${n.title.replace(/'/g,"\\'")}')"><img src="${n.img}"><div class="in"><span class="badge ${n.cls}">${n.badge}</span><h3>${n.title}</h3><p>${n.desc}</p></div></div>`;
+g.innerHTML+=`<div class="card"><img src="${n.img}"><div class="in"><span class="badge ${n.cls}">${n.badge}</span><h3>${n.title}</h3><p>${n.desc}</p></div></div>`;
 });
 }
 function filterNews(cat,el){
@@ -79,8 +66,6 @@ if(el) el.classList.add('active');
 if(cat=='all') showNews(news);
 else showNews(news.filter(n=>n.cat==cat));
 }
-function openModal(t){document.getElementById('modal').innerHTML=`<div style="background:#fff;padding:20px;border-radius:10px;max-width:400px;margin:20px auto"><h3>${t}</h3><p>Full story on Tombola News - 16 Sep 2026</p><button onclick="document.getElementById('modal').style.display='none'" style="padding:8px 15px;background:#b80000;color:#fff;border:none;border-radius:5px">Close</button></div>`;document.getElementById('modal').style.display='block';}
-function openPage(p){alert('Tombola News - Privacy & About - Contact: blackdolph12news@gmail.com');}
 showNews(news);
 </script>
 </body>
